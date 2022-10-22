@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Getter
 @Setter
-@Entity
+@Entity(name = "PRICES")
 public class ProductPrice {
 
     @EmbeddedId
