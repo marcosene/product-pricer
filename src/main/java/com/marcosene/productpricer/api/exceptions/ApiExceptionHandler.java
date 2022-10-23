@@ -1,5 +1,7 @@
 package com.marcosene.productpricer.api.exceptions;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,8 @@ import java.time.LocalDateTime;
 @ControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
+    private final Logger logger = LoggerFactory.getLogger(ApiExceptionHandler.class);
+
     @ExceptionHandler(NoResultException.class)
     public ResponseEntity<Object> handleNoResult(Exception ex, WebRequest request) {
         CustomErrorResponse errorResponse = new CustomErrorResponse();
@@ -21,6 +25,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         errorResponse.setError(ex.getMessage());
         errorResponse.setCode(-1);
 
+        logger.debug("handleNoResult() error=" + errorResponse.toString());
         return handleExceptionInternal(ex, errorResponse, new HttpHeaders(), HttpStatus.ACCEPTED, request);
     }
 }
