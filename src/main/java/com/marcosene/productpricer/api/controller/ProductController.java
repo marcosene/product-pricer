@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SecurityRequirement(name = "api-scheme")
 public class ProductController {
 
-    private Logger logger = LoggerFactory.getLogger(ProductController.class);
+    private final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
     @Autowired
     ProductService productService;
