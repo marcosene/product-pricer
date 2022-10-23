@@ -5,6 +5,7 @@ import com.marcosene.productpricer.api.request.ProductPriceRequest;
 import com.marcosene.productpricer.api.response.ProductPriceResponse;
 import com.marcosene.productpricer.model.ProductPrice;
 import com.marcosene.productpricer.service.ProductService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/api/product")
+@SecurityRequirement(name = "api-scheme")
 public class ProductController {
 
     @Autowired

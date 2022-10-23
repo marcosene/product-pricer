@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Data
 public class ProductPriceRequest {
 
-    @JsonFormat(pattern="yyyy-MM-dd-HH.mm.ss")
+    @JsonFormat(pattern = "yyyy-MM-dd-HH.mm.ss")
     private LocalDateTime currentTime;
 
     private Integer productId;
