@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ProductControllerTests extends AbstractControllerTests {
 
-    private final static String PRODUCT_PRICE_URI = "/product/price";
+    private final static String PRODUCT_PRICE_URI = "/api/product/price";
 
     private void assertResponse(MockHttpServletResponse response, Double price) throws Exception {
         assertEquals(HttpStatus.OK.value(), response.getStatus());
